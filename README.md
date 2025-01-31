@@ -3,7 +3,7 @@
 1. Search for images with multiple tags separated by a comma:
 <img src="./Screenshots/ImageSearch.jpeg" alt="Getting Started" width="300"/>
 
-2. The to do list. can the checkbox to mark the task as complete:
+2. Click on an image in the grid to view it's details:
 <img src="./Screenshots/ImageDetails.jpeg" alt="Getting Started" width="300"/>
 
 ## Setup Instructions
