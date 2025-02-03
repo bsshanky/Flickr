@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ImageListView: View {
-
+    
     @StateObject private var viewModel: ImageViewModel
     
     init(viewModel: ImageViewModel? = nil) {
@@ -21,40 +21,47 @@ struct ImageListView: View {
     
     @State private var path = NavigationPath()
     
-    let columns: [GridItem] = Array(repeating: GridItem(.flexible(), spacing: 2), count: 3)
-    
     var body: some View {
         NavigationStack(path: $path) {
+            GeometryReader { geo in
+                let width = geo.size.width
+                let itemWidth = width / 3 - 4
                 
-            VStack {
-                if viewModel.isLoading {
-                    ProgressView("Loading Images 🏞️...")
-                        .progressViewStyle(CircularProgressViewStyle())
-                    
-                } else if let errorMessage = viewModel.errorMessage {
-                    Text(errorMessage)
-                        .foregroundColor(.gray)
-                        .padding()
-
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: columns, spacing: 2) {
-                            ForEach(viewModel.images, id: \.link) { imageItem in
-                                NavigationLink(value: imageItem) {
-                                    ImageGridItem(imageURL: imageItem.media.imageURL,
-                                                  width: UIScreen.main.bounds.width / 3 - 4,
-                                                  height: UIScreen.main.bounds.width / 3 - 4)
+                let columns = [
+                    GridItem(.adaptive(minimum: itemWidth, maximum: itemWidth), spacing: 2)
+                ]
+                
+                VStack {
+                    if viewModel.isLoading {
+                        ProgressView("Loading Images 🏞️...")
+                            .progressViewStyle(CircularProgressViewStyle())
+                    } else if let errorMessage = viewModel.errorMessage {
+                        Text(errorMessage)
+                            .foregroundColor(.gray)
+                            .padding()
+                    } else {
+                        ScrollView {
+                            LazyVGrid(columns: columns, spacing: 2) {
+                                ForEach(viewModel.images, id: \.link) { imageItem in
+                                    NavigationLink(value: imageItem) {
+                                        ImageGridItem(
+                                            imageURL: imageItem.media.imageURL,
+                                            width: itemWidth,
+                                            height: itemWidth
+                                        )
+                                    }
                                 }
                             }
+                            .padding(.horizontal, 2)
                         }
-                        .padding(.horizontal, 2)
                     }
                 }
-            }
-            .navigationTitle("Images")
-            .searchable(text: $viewModel.searchText)
-            .navigationDestination(for: ImageItem.self) { imageItem in
-                ImageDetailView(item: imageItem)
+                .navigationTitle("Images")
+                .searchable(text: $viewModel.searchText)
+                .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                .navigationDestination(for: ImageItem.self) { imageItem in
+                    ImageDetailView(item: imageItem)
+                }
             }
         }
     }

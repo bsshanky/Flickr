@@ -12,12 +12,18 @@ struct ImageDetailView: View {
     let item: ImageItem
     
     var body: some View {
-        VStack {
+        GeometryReader { geo in
             ScrollView {
                 VStack(spacing: 20) {
                     
-                    ImageGridItem(imageURL: item.media.imageURL, width: UIScreen.main.bounds.width, height: 300)
-
+                    let itemWidth = min(geo.size.width, geo.size.height)
+                    
+                    ImageGridItem(
+                        imageURL: item.media.imageURL,
+                        width: itemWidth,
+                        height: 300
+                    )
+                    
                     HStack {
                         Text(item.title)
                             .font(.title2)
@@ -25,7 +31,6 @@ struct ImageDetailView: View {
                         Spacer()
                     }
                     .padding(.horizontal, 20)
-                    
 
                     sectionView(header: "Description") {
                         HStack {
@@ -33,21 +38,21 @@ struct ImageDetailView: View {
                             Spacer()
                         }
                     }
-
+                    
                     sectionView(header: "Author") {
                         HStack {
                             Text(item.author)
                             Spacer()
                         }
                     }
-
+                    
                     sectionView(header: "Published Date") {
                         HStack {
                             Text(item.formattedDate ?? "Unknown")
                             Spacer()
                         }
                     }
-
+                    
                     sectionView(header: "Dimensions") {
                         HStack {
                             Text("W x H: \(item.dimensions ?? "Unavailable")")
@@ -57,6 +62,7 @@ struct ImageDetailView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
         }
     }
     
@@ -71,11 +77,11 @@ struct ImageDetailView: View {
                 .padding()
                 .background(Color(uiColor: .systemGray5))
                 .cornerRadius(10)
-
         }
         .padding(.horizontal, 15)
     }
 }
+
 
 // MARK: PREVIEW
 

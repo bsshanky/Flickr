@@ -29,3 +29,7 @@
 
 I have covered all the features listed in the Acceptance Criteria. In the Extra Credit, I was able to fetch the image dimensions. I am planning to work on the other extra credit features post submission. Thank you for the opportunity to work on this project!
 
+Edit 1:
+
+I've added the support for the landscape orientation throughout the app.
+
