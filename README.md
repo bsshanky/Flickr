@@ -6,7 +6,10 @@
 2. Click on an image in the grid to view it's details:
 <img src="./Screenshots/ImageDetails.jpeg" alt="Getting Started" width="300"/>
 
-3. Custom action sheet:
+3. Dynamic image re-sizing for landscape orientation:
+<img src="./Screenshots/CustomActivitySheet.jpeg" alt="Getting Started" height="300"/>
+
+4. Custom action sheet:
 <img src="./Screenshots/CustomActivitySheet.jpeg" alt="Getting Started" width="300"/>
 <img src="./Screenshots/ShareSheet.jpeg" alt="Getting Started" width="300"/>
 
