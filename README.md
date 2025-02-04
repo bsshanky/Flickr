@@ -7,7 +7,7 @@
 <img src="./Screenshots/ImageDetails.jpeg" alt="Getting Started" width="300"/>
 
 3. Dynamic image re-sizing for landscape orientation:
-<img src="./Screenshots/CustomActivitySheet.jpeg" alt="Getting Started" height="300"/>
+<img src="./Screenshots/Landscape.jpeg" alt="Getting Started" height="300"/>
 
 4. Custom action sheet:
 <img src="./Screenshots/CustomActivitySheet.jpeg" alt="Getting Started" width="300"/>
