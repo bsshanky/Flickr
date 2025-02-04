@@ -10,6 +10,7 @@ import SwiftUI
 struct ImageDetailView: View {
     
     let item: ImageItem
+    @State private var showShareView = false
     
     var body: some View {
         GeometryReader { geo in
@@ -64,6 +65,20 @@ struct ImageDetailView: View {
             }
             .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
         }
+        
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showShareView = true
+                } label: {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
+        }
+        
+        .sheet(isPresented: $showShareView) {
+            ShareImageView(item: item, showShareView: $showShareView)
+        }
     }
     
     @ViewBuilder
@@ -85,8 +100,9 @@ struct ImageDetailView: View {
 
 // MARK: PREVIEW
 
-struct ImageDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        return ImageDetailView(item: ImageAPIResponse.mockImageItems[0])
+#Preview {
+    NavigationStack {
+        ImageDetailView(item: ImageAPIResponse.mockImageItems[0])
     }
+    
 }

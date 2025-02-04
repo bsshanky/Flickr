@@ -52,7 +52,7 @@ struct CacheAsyncImage<Content>: View where Content: View {
     }
 }
 
-fileprivate class ImageCache {
+class ImageCache {
     static private var cache: [URL: Image] = [:]
 
     static subscript(url: URL) -> Image? {

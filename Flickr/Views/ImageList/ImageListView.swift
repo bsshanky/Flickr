@@ -69,18 +69,15 @@ struct ImageListView: View {
 
 // MARK: PREVIEW
 
-struct ImageListView_Previews: PreviewProvider {
-    static var previews: some View {
-        
-        let mockImageItems = ImageAPIResponse.mockImageItems
-        
-        let mockResponse = ImageAPIResponse(items: mockImageItems)
-        
-        let mockService = MockImageFeedFetcher()
-        mockService.mockResult = .success(mockResponse)
-        
-        let mockViewModel = ImageViewModel(imageFetcherService: mockService)
-        
-        return ImageListView(viewModel: mockViewModel)
-    }
+#Preview {
+    let mockImageItems = ImageAPIResponse.mockImageItems
+    
+    let mockResponse = ImageAPIResponse(items: mockImageItems)
+    
+    let mockService = MockImageFeedFetcher()
+    mockService.mockResult = .success(mockResponse)
+    
+    let mockViewModel = ImageViewModel(imageFetcherService: mockService)
+    
+    return ImageListView(viewModel: mockViewModel)
 }

@@ -29,9 +29,22 @@
 		DB0DFEC22D4B35F6007FA975 /* FlickrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlickrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		DBBDF2BA2D51F45100937CAB /* Exceptions for "Flickr" folder in "Flickr" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = DB0DFEA72D4B35F3007FA975 /* Flickr */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		DB0DFEAA2D4B35F3007FA975 /* Flickr */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				DBBDF2BA2D51F45100937CAB /* Exceptions for "Flickr" folder in "Flickr" target */,
+			);
 			path = Flickr;
 			sourceTree = "<group>";
 		};
@@ -400,6 +413,9 @@
 				DEVELOPMENT_TEAM = F4T4372M48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Flickr/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to access your photo library to save photos into your Camera Roll.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -435,6 +451,9 @@
 				DEVELOPMENT_TEAM = F4T4372M48;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Flickr/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = NO;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "This app needs to access your photo library to save photos into your Camera Roll.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

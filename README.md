@@ -6,6 +6,10 @@
 2. Click on an image in the grid to view it's details:
 <img src="./Screenshots/ImageDetails.jpeg" alt="Getting Started" width="300"/>
 
+3. Custom action sheet:
+<img src="./Screenshots/CustomActionSheet.jpeg" alt="Getting Started" width="300"/>
+<img src="./Screenshots/ShareSheet.jpeg" alt="Getting Started" width="300"/>
+
 ## Setup Instructions
 
 1. Clone the repository:
@@ -32,4 +36,8 @@ I have covered all the features listed in the Acceptance Criteria. In the Extra 
 Edit 1:
 
 I've added the support for the landscape orientation throughout the app.
+
+Edit 2:
+
+I've added the support for sharing the image and it's link.
 
