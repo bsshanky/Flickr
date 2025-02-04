@@ -7,7 +7,7 @@
 <img src="./Screenshots/ImageDetails.jpeg" alt="Getting Started" width="300"/>
 
 3. Custom action sheet:
-<img src="./Screenshots/CustomActionSheet.jpeg" alt="Getting Started" width="300"/>
+<img src="./Screenshots/CustomActivitySheet.jpeg" alt="Getting Started" width="300"/>
 <img src="./Screenshots/ShareSheet.jpeg" alt="Getting Started" width="300"/>
 
 ## Setup Instructions
